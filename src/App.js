@@ -12,6 +12,7 @@ const App = () => {
     "Avana100mg4tablets",
     "CYFLOX200MG 10TABS (1X1X10)",
     "CYFLU150MG 1TABS (1X1X1)",
+    "AVANA100MG24TABLETS"
     // "AVANA100MG24TABLETS"
   ]
 
@@ -119,7 +120,6 @@ const handleFileSelect = (e) => {
             ))}
           </tbody>
         </table>
-
       )}
 
       <button onClick={transform}>Transform</button>
