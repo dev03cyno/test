@@ -103,18 +103,23 @@ const handleFileSelect = (e) => {
           <tbody>
             {sheetData.map((row, rowIndex) => (
               <tr key={rowIndex}>
-                {row.map((cellData, cellIndex) => (
-                  <td
-                    className={Items.includes(row[0]) ? '' : 'text-red-500'}
-                    key={cellIndex}
-                  >
-                    {cellData}
-                  </td>
-                ))}
+                {row.map((cellData, cellIndex) => {
+                  const lowercaseRow0 = row[0].trim().toLowerCase();
+                  const isMatch = Items.some(item => item.toLowerCase() === lowercaseRow0);
+                  return (
+                    <td
+                      className={isMatch ? '' : 'text-red-500'}
+                      key={cellIndex}
+                    >
+                      {cellData}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
         </table>
+
       )}
 
       <button onClick={transform}>Transform</button>
